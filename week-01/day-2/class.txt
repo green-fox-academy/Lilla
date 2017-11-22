@@ -1,0 +1,103 @@
+check in session
+github/GFA/please/projects!!! Announcements
+/syllabus : calneder link
+syllabus/wiki !!
+
+front= client (run on browser)
+back= serverside (behind)
+
+---
+
+INTERNET BASIC
+
+Fundamentals
+
+Yip, Yip, Yip!
+Internet: wire that connects pcs
+IP : uniqly indentified devices
+IPv4: (still exist)
+IPv6: more oppt. for uniq IPs
+bits:
+layout:
+Domain names: (tored in DNS server) I tipe it in a browser (name of IP addresses: facebook.com)
+	to buy, domain registrator companies selling domains
+ISP: inernet service provider ( access to main wire to the internet, indirectly join to the internet & register doamin as well)
+DNS: which IP to which Domain belongs
+Protocol: coomon rules, how to cimmunicate on the internet. How to handle the information or put informations together, all pacages arrives
+TCP: 
+
+Data transport
+
+How is data transmitted? (wire, air, wifi)
+TCP: take informations apart, get the packages and put them together to get the WHOLE data; garantee for data successfully arrives
+FTP,UDP, HTTP: protocols
+Packet: small informations form a big data
+Tracing packets
+URL: contains protocol(https, domain name(facebook.com), extention to the domain (domain is the part of it), slash, resources(/events)= files on the server, like image, html,
+	https://facebook.com/events
+			authentication: i am logged in (???)
+			autharization: what permissions I have
+ 	why do we see different in facebook events?: not static, dinamic page: who use the page 
+Router: traffic controll, choosing the quickest way to deliver data, and also home router is the only channel where data can flow throw.
+Fault tolerant, Redundancy:
+
+---
+
+WEBPAGE
+
+(html editors: subline, braket, visual studio code)
+
+HTML: marketlanguage ( defines the structure the webpage, static)
+CSS: for the design
+Doctype: declares html5 is using, it tells the browser (if we miss the tag, it use the current) if html6 reliesed, than it starts to understand as html6 if the tag is missingÖ
+	beggining of the page
+html semantic web: descryptive webpage we have to write
+	the hmtl file defines a lot of sematic tags, all div tags. If I use them, google gonna like my side :D
+	my html shoulb be written on the newest version, to get support from browsers/searchs engines.
+
+head: visible face (metainformations, links)
+body: main contant of the webpage
+headings: h1-h6 (it is for semantical reasons, because it is for browser not for style.. h1 is the most important for google 
+anchors: links, the a tag, inside and outside of my own page
+p: paragraphs
+strong: this is really important in my text (emphasize tag is for an important part AS p tag, strong is for a smaller part)
+div: doesn't have semantical meaning. To structureing, create boxes , to have a same CSS for them
+img
+image formats
+semantic tags
+article: has semantical meaning
+nav: navigation
+main: main part of my webpage (main comoumn and side coloumn)
+
+
+
+CSS
+selectro (space){(enter, 4 spaces) property: value;(enter)} property; value --> declaration
+style guide: define rules, how code should look like to be readable for others
+
+
+properties
+values
+shorthand values
+selectors: (target the tags in the webpage)
+color
+box model
+block vs. inline
+webfonts
+units (px, %, em, rem)
+font-size
+line-height
+background
+background-image
+--
+
+WEBPAGE
+
+save and refresh the browser
+all spaces counts as 1
+
+
+Inline tags: a, strong,
+	 ... doesn't make a new line it appears on the same line
+Block type tags: h1, p,
+	 create new lines after them ( after closing tags, autmaically creates a break)

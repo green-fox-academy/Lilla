@@ -1,0 +1,46 @@
+header {
+    background-color: black;
+    text-align: right;
+    height: 35px; 
+}
+
+
+img {
+   float: left;
+}
+
+a, h3 {
+    color: #ff0099;
+}
+
+body {
+    margin: 2px;
+    font-family: Consolas;
+    font-stretch: extra-condensed;
+}
+
+main {
+    margin: 10%;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    margin: 5%;
+}
+
+.navigationSpace {
+    width: 10px;
+}
+
+div {
+    text-align: center;
+    margin: 5%;
+}
+
+h1,h2,h3, h4 {
+    font-family: 'Fjalla One', sans-serif;
+}
