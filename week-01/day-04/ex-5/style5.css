@@ -1,0 +1,26 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    color: #FF6347;
+}
+
+h2 {
+    color: #8A2DE3;
+}
+
+ol {
+    list-style: upper-roman;
+    
+}
+
+ol li:nth-child(1) , ol li:nth-child(2), ol li:nth-child(3)
+ {
+    color: #FF80FF;
+    text-decoration: underline;
+ }
+
+ ol li:last-child {
+     text-decoration: underline;
+ }
