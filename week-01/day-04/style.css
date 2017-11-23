@@ -1,0 +1,19 @@
+div {
+    background-color: #0E91A1;
+    color: #015566;
+    font-size: 36px;
+    font-family: arial;
+    padding: 20px; 
+    margin: 0px 0px 15px 0px;
+    border: 5px solid #8AD39F;
+    width: 355px;
+    height: 140px;
+}
+
+p {
+    margin: 0px;
+}
+
+body {
+    margin: 5px;
+}
