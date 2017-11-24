@@ -1,4 +1,8 @@
-div {
+body {
+    background-color: #DCD6CD;
+}
+
+.background {
     margin: 10px 75px;
     box-sizing: border-box;
     background-color: #127731;
@@ -12,26 +16,50 @@ div {
 .first,
 .third {
     background-color: #FFE42E;
-    margin: 10px 0px;
+    margin: 5px 0px;
     padding: 10px;
-    border: 10px solid #FF1200;
+    border: 1px solid blue;
+}
+
+.first {
+    line-height: 30px;
 }
 
 .second {
     display: flex;
     padding: 0px;
-    margin: 0px;
     height: 320px;
     width: auto;
 }
 
 .box {
-    height: 320px;
+    height: 100%;
     width: 50%;
+}
+
+.block {
     margin: 0px;
+    height: 50%;
+    width: auto;
+    display: flex;
+}
+
+.half {
+    margin-top: 115px;
+    border: 1.5px solid black;
+    height: 30px;
+    width: 50%;
+}
+
+.textbox {
+    margin-top: 15px;
+    border:1.5px solid black;
+    height: 110px;
+    width: 100%;
 }
 
 
-div .third {
+.third {
+    margin-top: 10px;
     height: 135px;
 }
