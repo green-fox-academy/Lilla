@@ -15,6 +15,16 @@ ol {
     
 }
 
+ol li {
+    color: #FF80FF;
+    text-decoration: underline;
+}
+
+ol li:last-child {
+    color: black;
+}
+
+/*
 ol li:nth-child(1) , ol li:nth-child(2), ol li:nth-child(3)
  {
     color: #FF80FF;
@@ -24,3 +34,4 @@ ol li:nth-child(1) , ol li:nth-child(2), ol li:nth-child(3)
  ol li:last-child {
      text-decoration: underline;
  }
+ */
