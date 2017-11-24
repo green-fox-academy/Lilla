@@ -8,7 +8,7 @@ div {
     padding-bottom: 55px;
 }
 
-span,
+.box,
 .first,
 .third {
     background-color: #FFE42E;
@@ -21,6 +21,8 @@ span,
     display: flex;
     padding: 0px;
     margin: 0px;
+    height: 320px;
+    width: auto;
 }
 
 .box {
@@ -28,6 +30,7 @@ span,
     width: 50%;
     margin: 0px;
 }
+
 
 div .third {
     height: 135px;
