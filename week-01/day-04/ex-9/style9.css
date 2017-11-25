@@ -5,6 +5,7 @@ p {
     padding: 25px 20px;
     width: 345px;
     height: auto;
+    font-size: 18px;
 }
 p:hover {
     background: #ec6842;
