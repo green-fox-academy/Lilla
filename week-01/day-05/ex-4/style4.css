@@ -32,14 +32,14 @@ body {
     margin:0px;
 }
 
-.personal {
+.contact {
     float: right;
 }
 
 
 .half {
     border: 1.5px solid black;
-    height: 30px;
+    height: 50px;
     width: 50%;
 }
 
