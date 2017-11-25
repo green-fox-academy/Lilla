@@ -13,7 +13,7 @@ body {
 }
 
 .box,
-.profil,
+.profile,
 .introduction {
     background-color: #FFE42E;
     margin: 5px 0px;
@@ -50,7 +50,7 @@ body {
     width: 50%;
 }
 
-.textbox {
+.checkbox {
     margin-top: 15px;
     border:1.5px solid black;
     height: 110px;
