@@ -1,0 +1,64 @@
+body {
+    background-color: #DCD6CD;
+}
+
+.background {
+    margin: 10px 75px;
+    box-sizing: border-box;
+    background-color: #127731;
+    height: auto;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 55px;
+}
+
+.box,
+.profil,
+.introduction {
+    background-color: #FFE42E;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+/* .profil {
+    line-height: 30px;
+} */
+
+.data {
+    display: flex;
+    padding: 0px;
+    height: 320px;
+    width: auto;
+}
+
+.box {
+    height: 100%;
+    width: 50%;
+}
+
+.block {
+    margin: 0px;
+    height: 50%;
+    width: auto;
+    display: flex;
+}
+
+.half {
+    margin-top: 115px;
+    border: 1.5px solid black;
+    height: 30px;
+    width: 50%;
+}
+
+.textbox {
+    margin-top: 15px;
+    border:1.5px solid black;
+    height: 110px;
+    width: 100%;
+}
+
+
+.introduction {
+    margin-top: 40px;
+    height: 135px;
+}
