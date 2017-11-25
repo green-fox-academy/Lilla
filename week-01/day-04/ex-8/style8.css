@@ -1,0 +1,26 @@
+div {
+    width: 5auto;
+    height: 45px;
+    border: 2px solid #4285f4;
+    margin: 5px 5px 10px 5px;
+    padding: 20px;
+}
+
+div:last-child {
+    background: #ff6347;
+}
+
+span {
+    height: 40px;
+    width: 40px;
+    margin: 0px 5px;
+    display: inline-block;
+}
+
+.top span {
+    background: #4285f4;
+}
+
+.bottom span {
+    background: #643579;
+}
