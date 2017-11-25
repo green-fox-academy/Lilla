@@ -1,0 +1,30 @@
+p {
+    margin: 5px;
+    padding: 20px;
+    width: 265px;
+    height: auto;
+    font-size: 16px;
+    font-family: Courier;
+    color: white;
+    text-align: center;
+    background-image: url(duck.png);
+    background-repeat: no-repeat;
+}
+
+p:first-child {
+    background-color: #ff6347;
+    background-size: 25%;
+    background-position: left;
+}
+
+p:nth-child(2) {
+    background-color: #643579;
+    background-size: contain;
+    background-position: center;
+}
+
+p:last-child {
+    background-color: #808080;
+    background-size: 20%;
+    background-position: bottom right;
+}
