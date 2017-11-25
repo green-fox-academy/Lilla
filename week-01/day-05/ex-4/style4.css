@@ -4,7 +4,6 @@ body {
 
 .background {
     margin: 10px 75px;
-    box-sizing: border-box;
     background-color: #127731;
     height: auto;
     width: auto;
@@ -20,34 +19,36 @@ body {
     padding: 10px;
 }
 
-/* .profil {
-    line-height: 30px;
-} */
-
-.data {
+/* .data {
     display: flex;
     padding: 0px;
     height: 320px;
     width: auto;
-}
+} */
 
 .box {
-    height: 100%;
-    width: 50%;
+    height: 420px;
+    width: 48%;
+    margin:0px;
 }
 
-.block {
-    margin: 0px;
-    height: 50%;
-    width: auto;
-    display: flex;
+.personal {
+    float: right;
 }
+
 
 .half {
-    margin-top: 115px;
     border: 1.5px solid black;
     height: 30px;
     width: 50%;
+}
+
+.half h4 {
+    margin: 0px;
+}
+
+.birth {
+    float: right;
 }
 
 .checkbox {
@@ -59,6 +60,6 @@ body {
 
 
 .introduction {
-    margin-top: 40px;
+    margin-top: 5px;
     height: 135px;
 }
