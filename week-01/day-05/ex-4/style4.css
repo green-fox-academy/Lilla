@@ -26,7 +26,7 @@ body {
 }
 
 .box {
-    height: 420px;
+    height: 400x;
     width: 48%;
     margin:0px;
 }
@@ -41,7 +41,8 @@ select {
 
 .personal > input,
 .contact input,
-select {
+select,
+.introduction input[type="text"]{
     width: 100%;
 }
 
@@ -89,7 +90,11 @@ label {
 
 .introduction {
     margin-top: 5px;
-    height: 135px;
+    height: auto;
+}
+
+.introduction input[type="text"] {
+    height: 100px;
 }
 
 .reset {
