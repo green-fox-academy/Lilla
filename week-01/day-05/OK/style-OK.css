@@ -1,5 +1,5 @@
 body {
-    font-family:'Montserrat', sans-serif;
+    background-color: #DCD6CD;
 }
 
 .background {
@@ -11,19 +11,20 @@ body {
     padding-bottom: 55px;
 }
 
-.profile,
-.box,
-.introduction,
-.background {
-    background-color: #dcd6ce;
-}
-
 .box,
 .profile,
 .introduction {
+    background-color: #FFE42E;
     margin: 5px 0px;
     padding: 10px;
 }
+
+/* .data {
+    display: flex;
+    padding: 0px;
+    height: 320px;
+    width: auto;
+} */
 
 .box {
     height: 420px;
@@ -35,21 +36,8 @@ body {
     float: right;
 }
 
-select {
-    border-radius: 5px;
-}
-
-.personal > input,
-.contact input,
-select {
+.contact input {
     width: 100%;
-}
-
-.personal > input,
-.birth input,
-.contact input,
-select {
-    height: 25px;
 }
 
 
@@ -58,22 +46,11 @@ select {
     width: 50%;
 }
 
-
-h3 {
-    background: #938c96;
-    color: #dcd6ce;
-    padding: 10px;
+.personal > h4 {
+    margin: 0px;
 }
 
-p {
-    font-weight:bold;
-}
-
-label {
-    font-size: 12px;
-}
-
-.sex {
+.birth {
     float: right;
 }
 
@@ -90,8 +67,4 @@ label {
 .introduction {
     margin-top: 5px;
     height: 135px;
-}
-
-.reset {
-    float: right;
 }
