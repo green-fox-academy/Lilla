@@ -93,8 +93,10 @@ label {
     height: auto;
 }
 
-.introduction input[type="text"] {
+textarea {
     height: 100px;
+    width: 100%;
+    font-family:'Montserrat', sans-serif; 
 }
 
 .reset {
