@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class DrawTriangle {
@@ -7,11 +6,12 @@ public class DrawTriangle {
         Scanner input = new Scanner(System.in);
         int number = input.nextInt();
 
-        for (int i = 0; i < number; i++) {
-            for (int j = i + 1; j < number; j++) {
-                System.out.print("*");
-            }
-            System.out.println("*");
+
+        String star = "";
+
+        for (int i = 0; i<(number+1); i++) {
+            star = star + "*";
+            System.out.println(star);
         }
     }
 }
