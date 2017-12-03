@@ -8,12 +8,15 @@ public class Anagram {
 
         System.out.println("Please write a word here: ");
         String word2 = input1.next();
+        anagram(word1,word2);
 
-        String [] word1Array = word1.split ("");
+    }
+
+    public static void anagram (String picture, String puzzle ){
+        String [] word1Array = picture.split ("");
         List <String> word1List= Arrays.asList(word1Array);
 
-
-        String [] word2Array = word2.split ("");
+        String [] word2Array = puzzle.split ("");
         List <String> word2List= Arrays.asList(word2Array);
 
         if (word1List.containsAll(word2List)) {
