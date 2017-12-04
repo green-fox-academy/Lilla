@@ -11,20 +11,20 @@ public class DuplicatedChars {
         Path path2 = Paths.get("dcrypt.txt");
         FileWriter writeMyFile = new FileWriter("dcrypt.txt");
 
-        List<String> decryptedList = new ArrayList<String>();
+        List<String> decryptedList = new ArrayList<>();
         String decrypted = "";
 
         try {
             List <String> listOflines = Files.readAllLines(path);
             for (int i = 0; i < listOflines.size(); i++) {
                 for (int j = 0; j < (listOflines.get(i).length()); j += 2) {
-                    //System.out.print(listOflines.get(i).charAt(j));
-                    decrypted = decrypted + listOflines.get(i).charAt(j);
+                    System.out.print(listOflines.get(i).charAt(j));
+                    //decrypted = decrypted + listOflines.get(i).charAt(j);
                 }
-                //System.out.println();
-                decryptedList.add(decrypted);
+                System.out.println();
+                //decryptedList.add(decrypted);
             }
-            FileWriter(path2, decryptedList);
+            //FileWriter(path2, decryptedList);
         } catch (Exception e){
                 System.out.println("Error");
         }
