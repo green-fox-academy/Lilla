@@ -14,15 +14,15 @@ public class StarryNight extends JPanel {
         // - The stars should have random positions on the canvas
         // - The stars should have random color (some shade of grey)
 
-
-
         graphics.setColor(Color.BLACK);
-        graphics.fillRect(0,0 , WIDTH, HEIGHT);
-        int X = (int)(Math.random() * 300);
-        int Y = (int)(Math.random() * 300);
-        int color = (int)(Math.random() * 255);
-        graphics.setColor(new Color(color,color,color));
-        graphics.fillRect(X,Y, 5,5);
+        graphics.fillRect(0, 0, WIDTH, HEIGHT);
+        for (int i = 1; i < 20; i++) {
+            int X = (int) (Math.random() * 300);
+            int Y = (int) (Math.random() * 300);
+            int color = (int) (Math.random() * 255);
+            graphics.setColor(new Color(color, color, color));
+            graphics.fillRect(X , Y, 5, 5);
+        }
     }
 
     //    Don't touch the code below
