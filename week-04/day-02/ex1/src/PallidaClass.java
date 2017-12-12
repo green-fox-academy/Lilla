@@ -6,13 +6,11 @@ public class PallidaClass {
     List<Student> students;
     List<Mentor> mentors;
 
-    public PallidaClass (){
-        students = new ArrayList<>();
-        mentors = new ArrayList<>();
-    }
 
     public PallidaClass (String className){
-    this.className = className;
+        this.className = className;
+        students = new ArrayList<>();
+        mentors = new ArrayList<>();
     }
 
     public void addStudent(Student student) {
