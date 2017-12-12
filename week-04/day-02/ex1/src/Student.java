@@ -16,9 +16,9 @@ public class Student extends Person {
     }
 
     Student(name, age, gender, previousOrganization) {
-        name = "Jane Doe";
-        age = 30;
-        gender = "female";
+        //name = "Jane Doe";
+        //age = 30;
+        //gender = "female";
         previousOrganization = " The School of Life";
         skippedDays = 0;
     }
