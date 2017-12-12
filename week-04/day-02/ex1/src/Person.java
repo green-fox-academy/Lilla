@@ -11,8 +11,7 @@ public class Person {
         System.out.println("My goal is: Live for the moment!");
     }
 
-    public Person (name, age, gender){}
-    public Person(){
+    public Person (name, age, gender){
         name = "Jane Doe";
         age = 30;
         gender = "female";
