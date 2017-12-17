@@ -4,14 +4,15 @@ public class Aircraft {
     private int allDamage;
     private String type;
 
-    public Aircraft() {
-        ammo = 0;
-    }
 
-    public Aircraft(int ammo, int baseDamage, String type) {
-        this.ammo = ammo;
-        this.baseDamage = baseDamage;
+    public Aircraft(String type) {
+        this.ammo = 0;
         this.type = type;
+        if (type == "F16") {
+            this.baseDamage = 30;
+        } else {
+            this.baseDamage = 50;
+        }
     }
 
     public String getType() {
@@ -32,12 +33,18 @@ public class Aircraft {
         return allDamage;
     }
 
-    public void refill() {
-
+    public int refill(int numberToFill) {
+        int remaining = numberToFill - ammo;
+        if (type == "F16") {
+            ammo = 8;
+        } else {
+            ammo = 12;
+        }
+        return  remaining;
     }
 
 
     public void getStatus() {
-        System.out.println("Type: " + type + ", Ammo: " + ammo + ", Base Damage: " + baseDamage + ", All Damage: " + allDamage);
+       System.out.println("Type: " + type + ", Ammo: " + ammo + ", Base Damage: " + baseDamage + ", All Damage: " + allDamage);
     }
 }
