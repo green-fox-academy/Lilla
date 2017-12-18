@@ -10,8 +10,6 @@ public class PositionedImage {
   int posX, posY;
 
 
-
-
   public PositionedImage() {
   }
 

@@ -1,6 +1,6 @@
 public class Monster extends Character {
 
-  public void monsterMove() {
-
+  public Monster(String imagePath) {
+    super(imagePath);
   }
 }
