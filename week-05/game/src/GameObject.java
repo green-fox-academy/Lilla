@@ -1,5 +1,3 @@
-import java.awt.image.BufferedImage;
-
 public class GameObject {
   String imagePath;
 

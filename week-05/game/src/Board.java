@@ -24,8 +24,9 @@ public class Board extends JComponent implements KeyListener {
     // you can create and draw an image using the class below e.g.
     //PositionedImage image = new PositionedImage("wall.png", imagePositionX, imagePositionY);
     //System.out.println(Arrays.deepToString(image.readBoard("Board")));
-    Appearance image = new Appearance();
-    image.drawBoard(graphics, image.readBoard("Board"));
+    Appearance board = new Appearance();
+    board.drawBoard(graphics, board.readBoard("Board"));
+    board.drawBoard(graphics, board.readBoard("CharacterPositionBoard"));
   }
 
   public static void main(String[] args) {

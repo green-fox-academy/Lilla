@@ -7,6 +7,7 @@ import java.util.List;
 public class Appearance extends PositionedImage {
 
   GameObject[][] boardMatrix = readBoard("Board");
+  GameObject[][] characterMatrix = readBoard("CharacterPositionBoard");
 
   public GameObject[][] readBoard(String fileName) {
     Path filePath = Paths.get("src/" + fileName);
@@ -22,8 +23,16 @@ public class Appearance extends PositionedImage {
             TileWall wall = new TileWall();
             labirinthLayout [i][j] = wall;
           } else if (lines.get(i).charAt(j) == 'h') {
-            Hero hero = new Hero();
-            labirinthLayout [i][j] = hero;
+            HeroDown hero = new HeroDown();
+            labirinthLayout[i][j] = hero;
+          } else if (lines.get(i).charAt(j) == 'm') {
+            Monster skeleton = new Monster("monster.png");
+            labirinthLayout[i][j] = skeleton;
+          } else if (lines.get(i).charAt(j) == 'b') {
+            Boss boss = new Boss();
+            labirinthLayout[i][j] = boss;
+          } else {
+            System.out.println("null");
           }
         }
       }
