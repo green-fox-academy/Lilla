@@ -1,6 +1,6 @@
-public class Monster extends Character {
+public class Monster extends GameCharacter {
 
-  public Monster(String image) {
+  public Monster() {
     super("skeleton.png");
   }
 }

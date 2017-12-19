@@ -4,13 +4,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
-
-  int imagePositionX;
-  int imagePositionY;
+  Appearance board = new Appearance();
+  GameObject[][] characterMatrix;
+  GameCharacter hero = new GameCharacter();
 
   public Board() {
-    imagePositionX = 0;
-    imagePositionY= 0;
+    Appearance board = new Appearance();
+    characterMatrix = board.getCharacterMatrix();
+
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -23,10 +24,10 @@ public class Board extends JComponent implements KeyListener {
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
     //PositionedImage image = new PositionedImage("wall.png", imagePositionX, imagePositionY);
-    //System.out.println(Arrays.deepToString(image.readBoard("Board")));
-    Appearance board = new Appearance();
-    board.drawBoard(graphics, board.readBoard("Board"));
-    board.drawBoard(graphics, board.readBoard("CharacterPositionBoard"));
+    //System.out.println(Arrays.deepToString(image.readFile("Board")));
+
+    board.drawBoard(graphics, board.getBoardMatrix());
+    board.drawBoard(graphics, characterMatrix);
   }
 
   public static void main(String[] args) {
@@ -60,12 +61,17 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP) {
-      imagePositionX -= 70;
-    } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      imagePositionY += 70;
+    if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+
+      characterMatrix = hero.moveHeroRight(characterMatrix);
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      characterMatrix = hero.moveHeroLeft(characterMatrix);
+    } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+
+      // and redraw to have a new picture with the new coordinates
     }
-    // and redraw to have a new picture with the new coordinates
     repaint();
   }
 }

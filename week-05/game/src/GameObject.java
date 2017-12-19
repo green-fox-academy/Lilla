@@ -1,6 +1,9 @@
 public class GameObject {
   String imagePath;
 
+  public GameObject() {
+  }
+
   public GameObject(String imagePath) {
     this.imagePath = imagePath;
   }
@@ -12,4 +15,6 @@ public class GameObject {
   public void setImagePath(String imagePath) {
     this.imagePath = imagePath;
   }
+
+
 }

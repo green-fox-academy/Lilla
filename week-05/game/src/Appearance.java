@@ -6,31 +6,39 @@ import java.util.List;
 
 public class Appearance extends PositionedImage {
 
-  GameObject[][] boardMatrix = readBoard("Board");
-  GameObject[][] characterMatrix = readBoard("CharacterPositionBoard");
+  private GameObject[][] boardMatrix = readFile("Board");
+  private GameObject[][] characterMatrix = readFile("CharacterPositionBoard");
 
-  public GameObject[][] readBoard(String fileName) {
+  public GameObject[][] getBoardMatrix() {
+    return boardMatrix;
+  }
+
+  public GameObject[][] getCharacterMatrix() {
+    return characterMatrix;
+  }
+
+  public GameObject[][] readFile(String fileName) {
     Path filePath = Paths.get("src/" + fileName);
-    GameObject[][] labirinthLayout = new GameObject[10][10];
+    GameObject[][] coordinateList = new GameObject[10][10];
     try {
       List<String> lines = Files.readAllLines (filePath);
       for (int i = 0; i < lines.size(); i++) {
         for (int j = 0; j < lines.get(i).length(); j++) {
           if (lines.get(i).charAt(j) == 'p') {
             TilePath path = new TilePath();
-            labirinthLayout [i][j] = path;
+            coordinateList [i][j] = path;
           } else if (lines.get(i).charAt(j) == 'w') {
             TileWall wall = new TileWall();
-            labirinthLayout [i][j] = wall;
+            coordinateList [i][j] = wall;
           } else if (lines.get(i).charAt(j) == 'h') {
-            HeroDown hero = new HeroDown();
-            labirinthLayout[i][j] = hero;
-          } else if (lines.get(i).charAt(j) == 'm') {
-            Monster skeleton = new Monster("monster.png");
-            labirinthLayout[i][j] = skeleton;
+            Hero hero = new Hero();
+            coordinateList[i][j] = hero;
           } else if (lines.get(i).charAt(j) == 'b') {
             Boss boss = new Boss();
-            labirinthLayout[i][j] = boss;
+            coordinateList[i][j] = boss;
+          } else if (lines.get(i).charAt(j) == 'm') {
+            Monster skeleton = new Monster();
+            coordinateList[i][j] = skeleton;
           } else {
             System.out.println("null");
           }
@@ -39,7 +47,7 @@ public class Appearance extends PositionedImage {
     } catch(Exception e) {
       System.out.println("Oh no");
     }
-    return labirinthLayout;
+    return coordinateList;
   }
 
   public void drawBoard(Graphics graphics, GameObject [][] boardMatrix){
