@@ -32,8 +32,4 @@ public class Dominoes {
     //System.out.println(dominoes.get(0).toString());
     return dominoes;
   }
-
-
-
 }
-
