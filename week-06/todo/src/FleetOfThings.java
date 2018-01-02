@@ -17,9 +17,14 @@ public class FleetOfThings{
     todo2.complete();
     Thing todo3 = new Thing("Buy milk");
     fleet.add(todo3);
+    todo3.complete();
     Thing todo4 = new Thing("Eat brunch");
     todo4.complete();
     fleet.add(todo4);
+    Thing todo5 = new Thing("Apply job");
+    fleet.add(todo5);
+    Thing todo6 = new Thing("Write essay");
+    fleet.add(todo6);
 
     Collections.sort(fleet.getThings());
     System.out.println(fleet);

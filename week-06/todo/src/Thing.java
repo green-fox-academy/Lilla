@@ -17,10 +17,10 @@ public class Thing implements Comparable <Thing> {
 
   @Override
   public int compareTo(Thing otherTodo) {
-    if (completed == false) {
+    if (completed == otherTodo.completed) {
+      return name.compareToIgnoreCase(otherTodo.name);
+    } else if (completed == true) {
       return -1;
-    } else {
-      return this.name.compareTo(otherTodo.name);
-    }
+    } else return 1;
   }
 }
