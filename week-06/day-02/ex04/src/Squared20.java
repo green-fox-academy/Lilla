@@ -8,8 +8,7 @@ public class Squared20 {
             (Arrays.asList(3, 9, 2, 8, 6, 5));
 
     numbers.stream()
-            .map(n -> Math.pow(n, 2))
-            .filter(n -> n > 20)
+            .filter(n ->Math.pow(n, 2) > 20)
             .forEach(System.out::println);
   }
 }
