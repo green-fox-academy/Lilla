@@ -6,10 +6,11 @@ public class CharFrequency {
 
   public static void main(String[] args) {
 
-    String simpleWord = "gyalogkakukk";
+    String simpleWord = "gyalogKakukk";
 
     List<String> charList = simpleWord.chars()
             .mapToObj(c -> Character.toString((char)c))
+            .map(c -> c.toLowerCase())
             .collect(Collectors.toList());
 
     Map<Object, Long> charFrequency = charList.stream()
