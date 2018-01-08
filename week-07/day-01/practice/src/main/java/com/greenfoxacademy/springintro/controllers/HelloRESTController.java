@@ -14,5 +14,5 @@ public class HelloRESTController {
   public Greeting greeting( @RequestParam(value = "name", required = false) String name) {
     Greeting ciao = new Greeting(countClick.getAndIncrement(),"Hello, " + name + " !");
     return ciao;
-    }
+  }
 }
