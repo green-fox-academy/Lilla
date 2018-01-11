@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>BALANCE</th>
+            <th>TYPE</th>
+            <th>INDEX</th>
+            <th>STATE</th>
+            <th>KING</th>
+        </tr>
+        <tr th:each="account : ${animals}">
+            <td th:text="${accountStat.index}"/>
+            <td th:style="'color: Darkorange'" th:utext="${account.name}"/>
+            <td th:text="${account.balance}"/>
+            <td th:text="${account.animalType}"/>
+<!--          <td th:switch="${account.isBad()}">
+                <span th:case="false" th:text="'Good boy'" />
+                <span th:case="true" th:text="'Bad guy'" />
+            </td>       -->
+            <td>
+                <span th:if="${account.isBad()} == true" th:text="'Bad guy'" />
+                <span th:unless="${account.isBad()} == true" th:text="'Good boy'" />
+            </td>
+            <td>
+                <span th:if="${account.isKing()} == true" th:text="'King'" />
+            </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td > <button th:text="'$$$'"/></td>
+        </tr>
+    </table>
+</body>
+</html>
