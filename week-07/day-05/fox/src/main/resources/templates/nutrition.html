@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition Store</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="">Information</a>
+        </li>
+        <li>
+            <a href="">Nutrition Store</a>
+        </li>
+        <li>
+            <a href="">Trick Center</a>
+        </li>
+        <li>Action History</li>
+    </ul>
+    <span>Food</span>
+    <select th:field="*{food}">
+        <option th:each="food : ${foods}"
+                th:value="${type}"
+                th:text="#{${'seedstarter.type.' + type}}"/>
+    </select>
+    <!-- <select th:field="*{type}">
+        <option>Salad</option>
+        <option>Pizza</option>
+        <option>Burger</option>
+        <option>Lasagne</option>
+        <option>Croissant</option>
+        <option>Cereal</option>
+        <option>Boeuf Bourguignon</option>
+    </select>
+    <span>Drink</span>
+    <select>
+        <option>Water</option>
+        <option>Lemonade</option>
+        <option>Coke</option>
+        <option>Beer</option>
+        <option>Hot Chocolate</option>
+        <option>Tee</option>
+        <option>Red Wine</option>
+    </select> -->
+    <label for="food">Food</label>
+    <input id="food" name="petName" type="text" th:field="*{food}"/>
+    <input type="submit" value="Change"/>
+</body>
+</html>

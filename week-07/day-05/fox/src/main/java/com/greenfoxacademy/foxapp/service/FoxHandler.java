@@ -33,4 +33,8 @@ public class FoxHandler {
     foxes.add(pet);
     return pet;
   }
+
+  public void addFox(Fox pet) {
+    foxes.add(pet);
+  }
 }

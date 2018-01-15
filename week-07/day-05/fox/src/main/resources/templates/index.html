@@ -6,10 +6,19 @@
 </head>
 <body>
     <ul>
-        <li>Information</li>
+        <li>
+            <a href="">Information</a>
+        </li>
+        <li>
+            <a th:href="@{/nutritionStore/} + ${name}">Nutrition Store</a>
+        </li>
+        <li>
+            <a href="trick.html">Trick Center</a>
+        </li>
+        <li>Action History</li>
     </ul>
     <img src="C:\Users\Lilla\greenfox\vajdalil\week-07\day-05\fox\src\main\resources\static\greenfox.png"/>
-    <p th:text="'This is ' + ${name} + ' . Currently living on pizza and lemonade. He knows 2 tricks. '"/>
+    <p th:text="'This is ' + ${name} + ' . Currently living on ' + ${food} + ' and ' + ${drink} + ' . He knows 2 tricks. '"/>
     <h1>Known tricks</h1>
     <ul>
         <li>write HTML</li>
