@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/todo")
 public class TodoController {
 
   @Autowired
@@ -21,6 +21,19 @@ public class TodoController {
   public String list(Model model) {
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     model.addAttribute("todos", todos);
+    return "todo";
+  }
+
+  @GetMapping("/active")
+  public String showActive(Model model) {
+    List<Todo> active = new ArrayList<>();
+    List<Todo> todos = (List<Todo>) todoRepository.findAll();
+    for (Todo todo : todos) {
+      if (todo.isDone() == false) {
+        active.add(todo);
+      }
+    }
+    model.addAttribute("todos", active);
     return "todo";
   }
 }

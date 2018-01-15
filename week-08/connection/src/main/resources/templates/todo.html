@@ -6,10 +6,19 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
-<table>
-    <ul th:each="todo: ${todos}">
-        <li th:text="${todo.title}"></li>
-    </ul>
+<table  border="1" style="width:300px">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Urgent</th>
+    </tr>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.isDone()}"></td>
+        <td th:text="${todo.isUrgent()}"></td>
+    </tr>
 </table>
 </body>
 </html>
