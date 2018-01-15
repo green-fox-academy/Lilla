@@ -13,12 +13,18 @@
         <th>Title</th>
         <th>Done</th>
         <th>Urgent</th>
+        <th></th>
     </tr>
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
         <td th:text="${todo.isDone()}"></td>
         <td th:text="${todo.isUrgent()}"></td>
+        <td>
+            <form action="#" th:object="${todos}" th:action="@{list}" method="post">
+                <button type="submit" name="delete" th:value="${todoStat.index}">Delete</button>
+            </form>
+        </td>
     </tr>
 </table>
 </body>

@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,14 @@ public class TodoController {
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     model.addAttribute("todos", todos);
     return "todo";
+  }
+
+  @RequestMapping(value = "/list", params = {"delete"})
+  public String delete(final HttpServletRequest request) {
+    final Integer index = Integer.valueOf(request.getParameter("delete"));
+    Todo todo = todoRepository.findOne(index);
+    todoRepository.delete(todo.getId());
+    return "redirect:list";
   }
 
   @GetMapping("/active")
@@ -49,5 +59,6 @@ public class TodoController {
     todoRepository.save(todo);
     return "redirect:/list";
   }
+
 
 }
