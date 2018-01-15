@@ -21,6 +21,6 @@ public class TodoController {
   public String list(Model model) {
     List<Todo> todos = (List<Todo>) todoRepository.findAll();
     model.addAttribute("todos", todos);
-    return "list";
+    return "todo";
   }
 }
