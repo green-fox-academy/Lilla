@@ -1,5 +1,8 @@
 package greenfoxacademy.com.demo.model;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class BankAccount {
 
   private String name;
@@ -22,6 +25,8 @@ public class BankAccount {
     isKing = false;
     isBad = false;
   }
+
+
 
   public BankAccount(String name, int balance, String animalType, boolean isKing) {
     this.name = name;
@@ -48,6 +53,10 @@ public class BankAccount {
     return balance;
   }
 
+  public void setBalance(double balance) {
+    this.balance = balance;
+  }
+
   public String getCurrency() {
     return currency;
   }
@@ -67,5 +76,13 @@ public class BankAccount {
   @Override
   public String toString() {
     return getName() + " " + String.format("%.2", getBalance()) + "0 " + getCurrency() + " " + getAnimalType();
+  }
+
+  public void raise() {
+    if (isKing() == true ) {
+      setBalance(getBalance() + 100);
+    } else {
+      setBalance(getBalance() + 10);
+    }
   }
 }
