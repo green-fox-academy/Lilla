@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -60,5 +61,18 @@ public class TodoController {
     return "redirect:/list";
   }
 
+  //todo edithet kapcsolódik
 
+  @GetMapping("{id}/edit")
+  public String edit(Model model, @PathVariable int id) {
+    Todo todo = todoRepository.findOne(id);
+    model.addAttribute("todo", todo);
+    return "edit";
+  }
+
+  @PostMapping("/edit/todo")
+  public String createUpdate(Todo todo) {
+    todoRepository.save(todo);
+    return "redirect:/list";
+  }
 }
