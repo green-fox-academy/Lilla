@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 import java.util.ArrayList;
@@ -36,4 +37,17 @@ public class TodoController {
     model.addAttribute("todos", active);
     return "todo";
   }
+
+  @GetMapping("/add")
+  public String add(Model model) {
+    model.addAttribute("newTodo", new Todo());
+    return "add";
+  }
+
+  @PostMapping("/todo/create")
+  public String createNewTodo(Todo todo) {
+    todoRepository.save(todo);
+    return "redirect:/list";
+  }
+
 }
