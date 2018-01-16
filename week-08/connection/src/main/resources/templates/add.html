@@ -9,7 +9,7 @@
         background:url(https://lazyscholarproject.files.wordpress.com/2013/04/tiled_image.jpg?w=497)">
 <h1>Add new todo</h1>
 <form action="#" th:action="@{/todo/create}" th:object="${newTodo}" method="post">
-    <input type="text" name="topic" th:field="*{title}"/>
+    <input type="text" name="topic" placeholder="Todo..." th:field="*{title}"/>
     <input type="submit" value="Submit"/>
 </form>
 </body>

@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8"/>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <title>Edit Todo</title>
 </head>
 <body style="font-family: 'Indie Flower', cursive;
         background:url(https://lazyscholarproject.files.wordpress.com/2013/04/tiled_image.jpg?w=497)">
-    <h1>Edit Todo</h1>
-    <form action="#" th:object="${todos}" th:action="@{list}" method="post">
-        <input type="text" th:field="*{title}" />
-        <ul>
-            <li>
-                <input id="features1" name="features" type="checkbox" value="SEEDSTARTER_SPECIFIC_SUBSTRATE" />
-                <input name="_features" type="hidden" value="on" />
-                <label for="features1">Urgent</label>
-            </li>
-            <li>
-                <input id="features2" name="features" type="checkbox" value="FERTILIZER" />
-                <input name="_features" type="hidden" value="on" />
-                <label for="features2">Done</label>
-            </li>
-        </ul>
+    <h1>EDIT TODO</h1>
+    <form action="#" th:object="${todo}" th:action="@{/edit} + ${todo.id}"  method="post">
+        <div>
+            <label for="applicant_name" >Name:</label>
+            <input id="applicant_name" type="text" th:field="*{title}" />
+        </div>
+        <div>
+            <label for="isDone">Is Done?:</label>
+            <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+        </div>
+        <div>
+            <label for="isUrgent">Is Urgent?:</label>
+            <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+        </div>
+        <div>
+            <input class="btn btn-warning" type="submit" value="Edit" />
+        </div>
     </form>
 </body>
 </html>

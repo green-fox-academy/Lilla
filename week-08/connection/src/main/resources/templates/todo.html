@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <title>My todo</title>
 </head>
 <body style="font-family: 'Indie Flower', cursive;
         background:url(https://lazyscholarproject.files.wordpress.com/2013/04/tiled_image.jpg?w=497)">
 <h1>TODOS FOR TODAY:</h1>
 <a th:href="@{/add}">Add new todo</a>
-<table cellspacing="10">  <!--border="1" style="width:300px" -->
+<table>  <!--cellspacing="10" border="1" style="width:300px" -->
     <tr>
         <th>ID</th>
         <th>TITLE</th>
@@ -21,15 +22,15 @@
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
-        <td th:text="${todo.isDone()}"></td>
-        <td th:text="${todo.isUrgent()}"></td>
+        <td th:text="${todo.isDone}"></td>
+        <td th:text="${todo.isUrgent}"></td>
         <td>
             <form action="#" th:object="${todos}" th:action="@{list}" method="post">
-                <button type="submit" name="delete" th:value="${todoStat.index}">Delete</button>
+                <button type="submit" name="delete" class="btn btn-light" th:value="${todo.id}">Delete</button>
             </form>
         </td>
         <td>
-            <a th:href="@{/edit}">Edit</a>
+            <a th:href="@{/edit/} + ${todo.id}">Edit</a>
         </td>
     </tr>
 </table>
