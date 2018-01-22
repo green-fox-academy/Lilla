@@ -12,6 +12,8 @@ public class Main {
     worldChampionship.player1.wonPoint();
     worldChampionship.player1.wonPoint();
     worldChampionship.player2.wonPoint();
+    worldChampionship.player1.wonPoint();
+    worldChampionship.player2.wonPoint();
 
     System.out.println(worldChampionship.matchToString());
   }

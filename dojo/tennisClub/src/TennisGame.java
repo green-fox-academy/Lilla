@@ -14,7 +14,11 @@ public class TennisGame {
 
   public String matchToString() {
     if (player1.getMatchScore() == player2.getMatchScore()) {
-      return player1.scoreToString() + " - All";
+      if (player1.getMatchScore() > 4) {
+        matchCurrentResult = "Deuce";
+      } else {
+        return player1.scoreToString() + " - All";
+      }
     } else if (player1.getMatchScore() >= 4 || player2.getMatchScore() >= 4) {
       int scoreDifference = player1.getMatchScore() - player2.getMatchScore();
       if (scoreDifference == 1) {
