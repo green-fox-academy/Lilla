@@ -1,21 +1,25 @@
 package com.greenfoxacademy.frontend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Welcome {
 
-  private String welcome_message;
+  @JsonIgnore
+  private String name;
+
+  @JsonIgnore
+  private String title;
+
+  @JsonProperty("welcome_message")
+  private String welcomeMessage;
 
   public Welcome() {
   }
 
-  public Welcome(String welcome_message) {
-    this.welcome_message = welcome_message;
-  }
-
-  public String getWelcome_message() {
-    return welcome_message;
-  }
-
-  public void setWelcome_message(String welcome_message) {
-    this.welcome_message = welcome_message;
+  public Welcome(String name, String title) {
+    this.name = name;
+    this.title = title;
+    welcomeMessage = "Oh, hi there " + name + ", my dear " + title + "!";
   }
 }

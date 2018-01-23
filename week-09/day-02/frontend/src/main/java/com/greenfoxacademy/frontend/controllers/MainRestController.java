@@ -1,9 +1,11 @@
 package com.greenfoxacademy.frontend.controllers;
 
+import com.greenfoxacademy.frontend.models.AppendA;
 import com.greenfoxacademy.frontend.models.Doubling;
 import com.greenfoxacademy.frontend.models.Error;
 import com.greenfoxacademy.frontend.models.Welcome;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +29,16 @@ public class MainRestController {
     } else if (title == null) {
       return new Error("Please provide a title!");
     } else {
-      return new Welcome("Oh, hi there " + studentName + ", my dear " + title + "!");
+      return new Welcome(studentName, title);
+    }
+  }
+
+  @GetMapping("/appenda/{appendable}")
+  public Object doubling(@PathVariable String appendable) {
+    if(appendable == null) {
+      return new Error("404");
+    } else {
+      return new AppendA(appendable);
     }
   }
 }
