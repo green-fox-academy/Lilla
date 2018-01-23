@@ -1,13 +1,8 @@
 package com.greenfoxacademy.frontend.controllers;
 
-import com.greenfoxacademy.frontend.models.AppendA;
-import com.greenfoxacademy.frontend.models.Doubling;
+import com.greenfoxacademy.frontend.models.*;
 import com.greenfoxacademy.frontend.models.Error;
-import com.greenfoxacademy.frontend.models.Welcome;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainRestController {
@@ -34,11 +29,22 @@ public class MainRestController {
   }
 
   @GetMapping("/appenda/{appendable}")
-  public Object doubling(@PathVariable String appendable) {
+  public Object append(@PathVariable String appendable) {
     if(appendable == null) {
       return new Error("404");
     } else {
       return new AppendA(appendable);
+    }
+  }
+
+  @PostMapping("/dountil/{what}")
+  public Object doUntil(@PathVariable String what, @RequestBody (required = false) DoUntilValue doUntilValue) {
+    if (doUntilValue == null) {
+      return new Error("Please provide a number!");
+    } else if ( what.equals("sum") || what.equals("factor")) {
+      return new DoUntil(doUntilValue.getUntil(), what);
+    } else {
+      return new Error("No param");
     }
   }
 }
