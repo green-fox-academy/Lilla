@@ -16,6 +16,8 @@ public class MainRestController {
   @GetMapping("/doubling")
   public Object doubling(@RequestParam(value = "input", required = false) Integer input) {
     if(input != null) {
+      Log log = new Log("/doubling", "input=" + input);
+      logServicw.save(log);
       return new Doubling(input);
     } else {
       return new Error("Please provide an input!");
@@ -52,6 +54,8 @@ public class MainRestController {
     if (doUntilValue == null) {
       return new Error("Please provide a number!");
     } else if ( what.equals("sum") || what.equals("factor")) {
+      Log log = new Log("/dountil/{what}", "value=" + doUntilValue.getUntil().toString());
+      logServicw.save(log);
       return new DoUntil(doUntilValue.getUntil(), what);
     } else {
       return new Error("No param");
