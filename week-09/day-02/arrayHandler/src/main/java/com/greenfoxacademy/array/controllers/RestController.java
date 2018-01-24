@@ -21,6 +21,6 @@ public class RestController {
       return new Multiply(postArray.getNumbers());
     } else if (postArray.getWhat().equals("double")) {
       return new Double(postArray.getNumbers());
-    } return new Error("Please provide numbers!");
+    } return new Error("Please provide what to do with the numbers!");
   }
 }
