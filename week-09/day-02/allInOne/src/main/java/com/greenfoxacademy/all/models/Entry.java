@@ -1,15 +1,17 @@
 package com.greenfoxacademy.all.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class Entry {
 
-  private List <Log> entries;
-
+  private List <Log> entries = new ArrayList<>();
   @JsonProperty("entry_count")
-  private Integer EntryCount;
+  private Integer entryCount;
 
 
   public Entry() {
@@ -17,7 +19,7 @@ public class Entry {
 
   public Entry(List<Log> entries, Integer entryCount) {
     this.entries = entries;
-    EntryCount = entryCount;
+    this.entryCount = entryCount;
   }
 
   public List<Log> getEntries() {
@@ -29,10 +31,10 @@ public class Entry {
   }
 
   public Integer getEntryCount() {
-    return EntryCount;
+    return entryCount;
   }
 
   public void setEntryCount(Integer entryCount) {
-    EntryCount = entryCount;
+    this.entryCount = entryCount + 1;
   }
 }

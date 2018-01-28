@@ -35,7 +35,7 @@ public class DoUntil {
 
   public Integer factor(Integer until) {
     if (until == 0) {
-      return 0;
+      return 1;
     } else {
       return until * factor(until - 1);
     }
