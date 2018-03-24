@@ -1,44 +1,78 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Carrier {
 
-    private ArrayList <Aircraft> aircrafts = new ArrayList<>();
-    private int ammoStorage;
-    private int healthPoint;
-    private int totalDamage;
+  private int ammoStorage;
+  private int healthPoint;
+  private int totalDamage;
+  protected static final Flight16 F16 = new Flight16();
+  protected static final Flight35 F35 = new Flight35();
+  private List<Aircraft> carrier = new ArrayList<>();
 
-    public ArrayList<Aircraft> getAircrafts() {
-        return aircrafts;
-    }
+  public Carrier(int initialAmmo, int healthPoint) {
+    ammoStorage = initialAmmo;
+    this.healthPoint = healthPoint;
+  }
 
-    public Carrier(int initialAmmo, int healthPoint) {
-        this.ammoStorage = initialAmmo;
-        this.healthPoint = healthPoint;
-    }
+  public int getAmmoStorage() {
+    return ammoStorage;
+  }
 
-    public void addAircraft(Aircraft type){
-        aircrafts.add(type);
-    }
+  public void setAmmoStorage(int ammoStorage) {
+    this.ammoStorage = ammoStorage;
+  }
 
-    public void fill() {
-        //todo solve the problem, that ammoStorage can't be less, than 0 and fill with existing volume
-        for (Aircraft currentAircraft: aircrafts) {
-            if (currentAircraft.getType() == "F35") {
-                ammoStorage = ammoStorage - (12 - currentAircraft.getAmmo());
-                currentAircraft.setAmmo(12);
-            } else {
-                ammoStorage = ammoStorage - (8 - currentAircraft.getAmmo());
-                currentAircraft.setAmmo(8);
-            }
-        }
-    }
+  public int getHealthPoint() {
+    return healthPoint;
+  }
 
-    public void fight(Carrier defender, Carrier attacker) {
-        defender.healthPoint = defender.healthPoint - attacker.ammoStorage;
-    }
+  public void setHealthPoint(int healthPoint) {
+    this.healthPoint = healthPoint;
+  }
 
-    public void getStatus() {
-        System.out.println("\n" + "HP: " + healthPoint + " Aircraft count: " + aircrafts.size() + " Ammo Storage: " + ammoStorage + " Total damage: " + totalDamage
-                + "\n"  + " Aircrafts: " + "\n");
+  public int getTotalDamage() {
+    return totalDamage;
+  }
+
+  public void setTotalDamage(int totalDamage) {
+    this.totalDamage = totalDamage;
+  }
+
+  public void addAircraft(Aircraft flight, int amount) {
+    for (int i = 0; i <= amount ; i++) {
+      carrier.add(flight);
     }
+  }
+
+  public void fill() {
+    while (ammoStorage == 0)
+    for (Aircraft currentAircraft : carrier) {
+      if (currentAircraft == F35) {
+        ammoStorage = -currentAircraft.getMaxAmmo() - currentAircraft.getCurrentAmmo();
+      } else {
+        ammoStorage = -currentAircraft.getMaxAmmo() - currentAircraft.getCurrentAmmo();
+      }
+    }
+  }
+
+  public void fight(Carrier attacker, Carrier defenser) {
+    for (Aircraft currentAircraft : carrier) {
+      attacker.setTotalDamage(attacker.getTotalDamage() + currentAircraft.getAllDamage());
+      defenser.setTotalDamage(defenser.getTotalDamage() + currentAircraft.getAllDamage());
+      attacker.setHealthPoint(attacker.getHealthPoint() - defenser.getTotalDamage());
+      defenser.setHealthPoint(defenser.getHealthPoint() - attacker.getTotalDamage());
+    }
+  }
+
+  public void getStatus() {
+    System.out.println("\nHP: " + healthPoint + ", Aircraft count: " + carrier.size() + ", Ammo Storage: "
+                        + ammoStorage + ", Total damage: " + totalDamage + "\n"
+                        + "Aircrafts:");
+    for (Aircraft currentAircraft: carrier) {
+      System.out.println(currentAircraft.getStatus());
+    }
+  }
 }
+
+
